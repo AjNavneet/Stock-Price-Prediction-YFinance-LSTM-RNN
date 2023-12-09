@@ -1,6 +1,4 @@
-# Stock Price Prediction Using yfinance, LSTM and RNN
-
-## Project Overview
+# Stock Price Prediction Using Yfinance, LSTM and RNN
 
 ### Business Context
 
@@ -61,16 +59,6 @@ The dataset used for this project comprises historical stock prices of Apple Inc
 - **ml_pipeline**: A folder with Python functions, where `engine.py` calls these functions to execute the project steps.
 - **output**: Contains saved models produced by `engine.py`.
 - **requirements.txt**: Lists all required libraries and their versions for installation.
-
----
-
-## Key Concepts Explored
-
-1. A comprehensive understanding of the practical application of stock price prediction.
-2. Insights into the challenges and limitations of financial forecasting.
-3. Proficiency in utilizing RNNs and LSTMs for time series forecasting.
-4. The ability to preprocess and analyze historical stock price data.
-5. The knowledge to incorporate technical indicators for improved prediction accuracy.
 
 ---
 

@@ -1,65 +1,210 @@
-# Stock Price Prediction Using Yfinance, LSTM and RNN
+# Stock Price Prediction Using Yfinance, LSTM, and RNN
 
-### Business Context
+## Business Context
 
-Accurate stock price prediction is of paramount importance in financial markets, influencing investment decisions, risk management, and portfolio optimization. This project focuses on implementing recurrent neural networks (RNNs) and long short-term memory (LSTM) networks for stock price prediction, offering valuable insights into the intersection of deep learning and financial forecasting.
-
----
-
-### Practical Application
-
-Accurate stock price predictions are a game-changer for a wide range of stakeholders, including investors, traders, and financial analysts. These predictions enable investors to make informed decisions, identify investment opportunities, and adapt their portfolios in response to anticipated price movements.
+Accurate stock price prediction plays a pivotal role in financial markets, influencing investment decisions, risk management, and portfolio optimization. This project leverages **recurrent neural networks (RNNs)** and **long short-term memory (LSTM)** networks for stock price prediction, showcasing the application of deep learning techniques in financial forecasting.
 
 ---
 
-### Challenges and Limitations
+## Practical Application
 
-Stock price prediction is a challenging task due to the intricate nature of financial markets. This project acknowledges the presence of market volatility, external events, and data noise as factors that can affect prediction accuracy. It highlights the inherent limitations in forecasting financial market behavior.
+Stock price prediction benefits a wide range of stakeholders, including:
+
+- **Investors**: Make informed investment decisions and identify opportunities.
+- **Traders**: Adapt strategies to anticipated price movements.
+- **Financial Analysts**: Analyze market trends to provide actionable insights.
+
+By accurately forecasting stock prices, stakeholders can manage risks and optimize portfolios more effectively.
 
 ---
 
-### Objective
+## Challenges and Limitations
+
+Stock price prediction is inherently challenging due to:
+
+- **Market Volatility**: Unpredictable price fluctuations driven by external events.
+- **Data Noise**: Irregularities and inconsistencies in financial data.
+- **External Factors**: Global events, policy changes, and other variables impacting market behavior.
+
+This project acknowledges these challenges and aims to highlight how RNNs and LSTMs address temporal dependencies in financial data.
+
+---
+
+## Objective
 
 The project aims to achieve the following outcomes:
 
-- Enhanced forecasting accuracy of stock prices.
-- RNN and LSTM networks.
-- Insights into how these models capture temporal dependencies in time series data.
+- Improved forecasting accuracy of stock prices.
+- Effective use of **RNN** and **LSTM** networks.
+- Insights into how deep learning models capture temporal dependencies in time series data.
 
 ---
 
 ## Data Description
 
-The dataset used for this project comprises historical stock prices of Apple Inc. (AAPL), sourced from Yahoo Finance's API. It provides daily records of open, close, high, low prices, and trading volume for each trading day.
+The dataset consists of historical stock prices for **Apple Inc. (AAPL)**, sourced using the [Yahoo Finance API](https://pypi.org/project/yfinance/). Key features include:
+
+- **Open**: Opening price of the stock.
+- **Close**: Closing price of the stock.
+- **High**: Highest price for the trading day.
+- **Low**: Lowest price for the trading day.
+- **Volume**: Number of shares traded.
 
 ---
 
-### Tech Stack
+## Tech Stack
 
-- Language: `Python`
-- Libraries: `Keras`, `TensorFlow`, `Statsmodels`, `NumPy`, `Pandas`, `yfinance`, `pandas-datareader`, `pandas_ta`
-
----
-
-### Approach
-
-1. Understanding neural networks basics.
-2. Loading time series data from Yahoo Finance.
-3. Data preprocessing, including scaling, normalization, and window creation.
-4. Building and training RNN models.
-5. Model evaluation and sequence generation.
-6. Extending the analysis to Long Short-Term Memory (LSTM) networks.
-7. Incorporating technical indicators and multivariate inputs for more accurate predictions.
+- **Programming Language**: [Python](https://www.python.org/)
+- **Libraries**:
+  - [`Keras`](https://keras.io/) and [`TensorFlow`](https://www.tensorflow.org/) for building and training neural networks.
+  - [`Statsmodels`](https://www.statsmodels.org/) for statistical analysis.
+  - [`NumPy`](https://numpy.org/) and [`Pandas`](https://pandas.pydata.org/) for data manipulation.
+  - [`yfinance`](https://pypi.org/project/yfinance/) for retrieving stock data.
+  - [`pandas-datareader`](https://pandas-datareader.readthedocs.io/en/latest/) for accessing financial data.
+  - [`pandas-ta`](https://github.com/twopirllc/pandas-ta) for technical analysis indicators.
 
 ---
 
-### Modular Code Structure
+## Approach
 
-- **lib**: A reference folder containing original IPython notebooks.
-- **ml_pipeline**: A folder with Python functions, where `engine.py` calls these functions to execute the project steps.
-- **output**: Contains saved models produced by `engine.py`.
-- **requirements.txt**: Lists all required libraries and their versions for installation.
+### 1. Neural Network Basics
+- Understand the concepts of RNNs and LSTMs for handling sequential data.
+
+### 2. Load Stock Data
+- Retrieve historical stock price data using **Yahoo Finance API**.
+
+### 3. Data Preprocessing
+- Scale and normalize stock price data.
+- Create sliding windows for time series analysis.
+
+### 4. RNN Model Development
+- Build and train recurrent neural networks for stock price prediction.
+
+### 5. LSTM Model Development
+- Extend the analysis by implementing LSTM networks to capture long-term dependencies.
+
+### 6. Incorporate Technical Indicators
+- Use additional features, such as technical analysis indicators, for improved predictions.
+
+### 7. Model Evaluation
+- Assess the performance of the RNN and LSTM models using appropriate metrics.
+- Generate sequences for forecasting.
 
 ---
 
+## Modular Code Structure
+
+```plaintext
+.
+├── lib/                                   # Reference folder with original IPython notebooks.
+├── ml_pipeline/                           # Folder with modular Python scripts.
+│   ├── data_preparation.py                # Functions for data preprocessing.
+│   ├── model_training.py                  # Functions for training RNN and LSTM models.
+│   ├── evaluation.py                      # Functions for evaluating model performance.
+│   ├── engine.py                          # Main script to execute the pipeline.
+├── output/                                # Stores saved models and evaluation results.
+├── requirements.txt                       # Lists all required libraries and their versions.
+└── README.md                              # Project documentation.
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository_url>
+cd <repository_folder>
+```
+
+### 2. Install Dependencies
+
+Install the required Python libraries using:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the Project
+
+Execute the pipeline by running the `engine.py` script:
+
+```bash
+python ml_pipeline/engine.py
+```
+
+### 4. Explore Results
+
+- Review model outputs and predictions in the `output/` folder.
+- Analyze the evaluation metrics for model performance.
+
+---
+
+## Results
+
+- **Forecasting Accuracy**:
+  - RNN and LSTM models effectively captured temporal patterns in stock prices.
+- **Technical Indicator Integration**:
+  - Enhanced predictions by incorporating additional features.
+- **Deep Learning Insights**:
+  - Demonstrated how RNNs and LSTMs model sequential dependencies in financial data.
+
+
+
+---
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a feature branch:
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes:
+
+```bash
+git commit -m "Add feature"
+```
+
+4. Push your branch:
+
+```bash
+git push origin feature-name
+```
+
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+## Contact
+
+For any questions or suggestions, please reach out to:
+
+- **Name**: Abhinav Navneet
+- **Email**: mailme.AbhinavN@gmail.com
+- **GitHub**: [AjNavneet](https://github.com/AjNavneet)
+
+---
+
+## Acknowledgments
+
+Special thanks to:
+
+- [Keras](https://keras.io/) and [TensorFlow](https://www.tensorflow.org/) for providing robust deep learning frameworks.
+- [Yahoo Finance API](https://pypi.org/project/yfinance/) for stock data retrieval.
+- [Statsmodels](https://www.statsmodels.org/) and [pandas-ta](https://github.com/twopirllc/pandas-ta) for technical analysis.
+- The Python open-source community for their excellent tools and libraries.
+
+---
 
